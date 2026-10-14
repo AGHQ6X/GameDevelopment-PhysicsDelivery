@@ -1672,7 +1672,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 0.01, z: 10}
-  m_LocalScale: {x: 1, y: 0.02, z: 1}
+  m_LocalScale: {x: 2, y: 0.02, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1941,9 +1941,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   targetScore: 3
   startingAttempts: 3
-  deliveriesText: {fileID: 0}
-  attemptsText: {fileID: 0}
-  statusText: {fileID: 0}
+  deliveriesText: {fileID: 1962403784}
+  attemptsText: {fileID: 1498449689}
+  statusText: {fileID: 2137351050}
   isPlaying: 1
 --- !u!1 &1775684021
 GameObject:
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 1775684022}
   m_Layer: 0
   m_Name: HazardZone
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2066,7 +2066,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 0.01, z: 4}
-  m_LocalScale: {x: 1, y: 0.02, z: 1}
+  m_LocalScale: {x: 2, y: 0.02, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2613,6 +2613,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1118156383861698889, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118156383861698889, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118156383861698889, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2662,7 +2670,11 @@ PrefabInstance:
       objectReference: {fileID: 1248019164}
     - target: {fileID: 9092572213383148008, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
       propertyPath: m_Mass
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092572213383148008, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
