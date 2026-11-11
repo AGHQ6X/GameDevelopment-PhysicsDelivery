@@ -13,7 +13,12 @@ public class GameManager : MonoBehaviour
     private int currentScore = 0;
     private int currentAttempts;
 
-    public bool isPlaying = true;
+    public bool isPlaying;
+
+    public Transform resetObjectPosition;
+    public Transform resetPointPosition;
+
+    public GameManager next;
 
     void Start()
     {
@@ -22,6 +27,14 @@ public class GameManager : MonoBehaviour
         UpdateUI();
 
         statusText.text = "";
+
+        if (isPlaying) Activate();
+    }
+
+    public void Activate()
+    {
+        GameObject.FindWithTag("ResetObject").transform.position = resetObjectPosition.position;
+        GameObject.FindWithTag("ResetPoint").transform.position = resetPointPosition.position;
     }
 
     public void AddScore()
