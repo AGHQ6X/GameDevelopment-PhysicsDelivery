@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
         GameObject camera = GameObject.FindWithTag("MainCamera");
         camera.transform.position = resetCameraPosition.position;
         camera.transform.rotation = resetCameraPosition.rotation;
+
+        UpdateUI();
     }
 
     public void AddScore()
