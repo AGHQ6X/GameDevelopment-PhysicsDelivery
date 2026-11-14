@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1415f07322051314f94866d80a41222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceBumper
-  launchForce: 40
+  launchForce: 30
 --- !u!65 &400478545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1415f07322051314f94866d80a41222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceBumper
-  launchForce: 30
+  launchForce: 20
 --- !u!65 &439404315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4039,7 +4039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1415f07322051314f94866d80a41222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceBumper
-  launchForce: 30
+  launchForce: 10
 --- !u!65 &1733652069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5506,11 +5506,11 @@ PrefabInstance:
       objectReference: {fileID: 772376657}
     - target: {fileID: 9092572213383148008, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9092572213383148008, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
       propertyPath: m_AngularDamping
-      value: 1000
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
