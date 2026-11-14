@@ -1939,7 +1939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772376657}
   m_Layer: 0
-  m_Name: ResetPoint1
+  m_Name: ResetObject1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4199,8 +4199,8 @@ MonoBehaviour:
   attemptsText: {fileID: 1498449689}
   statusText: {fileID: 2137351050}
   isPlaying: 1
-  resetObjectPosition: {fileID: 2080259410}
-  resetPointPosition: {fileID: 772376657}
+  resetObjectPosition: {fileID: 772376657}
+  resetPointPosition: {fileID: 2080259410}
   resetCameraPosition: {fileID: 1750082239}
   next: {fileID: 1837681676}
 --- !u!1 &1784708300
@@ -4908,8 +4908,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 772376657}
   - {fileID: 2080259410}
+  - {fileID: 772376657}
   - {fileID: 1750082239}
   m_Father: {fileID: 907727281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5101,7 +5101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080259410}
   m_Layer: 0
-  m_Name: ResetObject1
+  m_Name: ResetPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5510,7 +5510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092572213383148008, guid: a969406d4ef942c49bbca0163b7584a6, type: 3}
       propertyPath: m_AngularDamping
-      value: 2
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
