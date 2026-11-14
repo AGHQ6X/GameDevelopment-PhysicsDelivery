@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 408234199}
   m_Layer: 0
   m_Name: ResetPoint2
-  m_TagString: ResetPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1717,7 +1717,7 @@ GameObject:
   - component: {fileID: 611034768}
   m_Layer: 0
   m_Name: ResetObject2
-  m_TagString: ResetObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1938,7 +1938,7 @@ GameObject:
   - component: {fileID: 772376657}
   m_Layer: 0
   m_Name: ResetPoint1
-  m_TagString: ResetPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4165,7 +4165,7 @@ MonoBehaviour:
   deliveriesText: {fileID: 1962403784}
   attemptsText: {fileID: 1498449689}
   statusText: {fileID: 2137351050}
-  isPlaying: 1
+  isPlaying: 0
   resetObjectPosition: {fileID: 2080259410}
   resetPointPosition: {fileID: 772376657}
   next: {fileID: 1837681676}
@@ -4442,7 +4442,7 @@ MonoBehaviour:
   deliveriesText: {fileID: 1962403784}
   attemptsText: {fileID: 1498449689}
   statusText: {fileID: 2137351050}
-  isPlaying: 0
+  isPlaying: 1
   resetObjectPosition: {fileID: 611034768}
   resetPointPosition: {fileID: 408234199}
   next: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 2080259410}
   m_Layer: 0
   m_Name: ResetObject1
-  m_TagString: ResetObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

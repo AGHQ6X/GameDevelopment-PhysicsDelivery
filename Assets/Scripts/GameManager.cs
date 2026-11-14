@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     {
         GameObject.FindWithTag("ResetObject").transform.position = resetObjectPosition.position;
         GameObject.FindWithTag("ResetPoint").transform.position = resetPointPosition.position;
+
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().ResetPlayer();
+        GameObject.FindWithTag("DeliveryObject").GetComponent<DeliveryObject>().ResetDelivery();
     }
 
     public void AddScore()
