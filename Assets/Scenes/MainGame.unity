@@ -4198,7 +4198,7 @@ MonoBehaviour:
   deliveriesText: {fileID: 1962403784}
   attemptsText: {fileID: 1498449689}
   statusText: {fileID: 2137351050}
-  isPlaying: 0
+  isPlaying: 1
   resetObjectPosition: {fileID: 2080259410}
   resetPointPosition: {fileID: 772376657}
   resetCameraPosition: {fileID: 1750082239}
@@ -4476,7 +4476,7 @@ MonoBehaviour:
   deliveriesText: {fileID: 1962403784}
   attemptsText: {fileID: 1498449689}
   statusText: {fileID: 2137351050}
-  isPlaying: 1
+  isPlaying: 0
   resetObjectPosition: {fileID: 611034768}
   resetPointPosition: {fileID: 408234199}
   resetCameraPosition: {fileID: 1965524932}

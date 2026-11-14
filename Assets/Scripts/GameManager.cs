@@ -92,8 +92,18 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
 
-        statusText.text =
-            "YOU WIN!";
+        // No next level
+        if (next == null)
+        {
+            statusText.text =
+                "YOU WIN!";
+        }
+        // Move to next level
+        else
+        {
+            next.isPlaying = true;
+            next.Activate();
+        }
     }
 
     void LoseGame()
