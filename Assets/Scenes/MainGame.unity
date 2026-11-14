@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1415f07322051314f94866d80a41222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceBumper
-  launchForce: 60
+  launchForce: 40
 --- !u!65 &400478545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1768,6 +1768,7 @@ Transform:
   m_Children:
   - {fileID: 408234199}
   - {fileID: 611034768}
+  - {fileID: 1965524932}
   m_Father: {fileID: 255836631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718759582
@@ -1805,6 +1806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 7
   gameManager: {fileID: 1754458361}
+  isActive: 1
 --- !u!54 &718759584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4116,6 +4118,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733652066}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1750082238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750082239}
+  m_Layer: 0
+  m_Name: ResetCamera1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1750082239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750082238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5150382, y: 0, z: 0, w: 0.8571673}
+  m_LocalPosition: {x: 0, y: 25, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963560826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1754458359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,6 +4201,7 @@ MonoBehaviour:
   isPlaying: 0
   resetObjectPosition: {fileID: 2080259410}
   resetPointPosition: {fileID: 772376657}
+  resetCameraPosition: {fileID: 1750082239}
   next: {fileID: 1837681676}
 --- !u!1 &1784708300
 GameObject:
@@ -4445,6 +4479,7 @@ MonoBehaviour:
   isPlaying: 1
   resetObjectPosition: {fileID: 611034768}
   resetPointPosition: {fileID: 408234199}
+  resetCameraPosition: {fileID: 1965524932}
   next: {fileID: 0}
 --- !u!1 &1878756547
 GameObject:
@@ -4875,7 +4910,39 @@ Transform:
   m_Children:
   - {fileID: 772376657}
   - {fileID: 2080259410}
+  - {fileID: 1750082239}
   m_Father: {fileID: 907727281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1965524931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965524932}
+  m_Layer: 0
+  m_Name: ResetCamera2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1965524932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965524931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5150382, y: 0, z: 0, w: 0.8571673}
+  m_LocalPosition: {x: 0, y: 25, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 653559966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983453750
 GameObject:

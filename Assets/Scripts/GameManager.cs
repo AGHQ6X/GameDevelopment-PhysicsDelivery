@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public Transform resetObjectPosition;
     public Transform resetPointPosition;
+    public Transform resetCameraPosition;
 
     public GameManager next;
 
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
 
         GameObject.FindWithTag("Player").GetComponent<PlayerController>().ResetPlayer();
         GameObject.FindWithTag("DeliveryObject").GetComponent<DeliveryObject>().ResetDelivery();
+
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        camera.transform.position = resetCameraPosition.position;
+        camera.transform.rotation = resetCameraPosition.rotation;
     }
 
     public void AddScore()
