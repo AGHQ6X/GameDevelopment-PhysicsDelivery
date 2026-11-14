@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public GameManager gameManager;
+    public bool isActive = true;
 
     private Rigidbody rb;
     private Vector2 moveInput;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!gameManager.isPlaying)
+        if (!isActive)
         {
             moveInput = Vector2.zero;
             return;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!gameManager.isPlaying)
+        if (!isActive)
             return;
 
         Vector3 movement =
@@ -62,5 +63,16 @@ public class PlayerController : MonoBehaviour
             moveSpeed *
             Time.fixedDeltaTime
         );
+    }
+
+    public void ResetPlayer()
+    {
+        Transform resetPoint = GameObject.FindWithTag("ResetPoint").GetComponent<Transform>();
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        rb.position = resetPoint.position;
+        rb.rotation = resetPoint.rotation;
     }
 }

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class DeliveryObject : MonoBehaviour
 {
-    public Transform resetPoint;
-
     private Rigidbody rb;
 
     void Start()
@@ -13,6 +11,8 @@ public class DeliveryObject : MonoBehaviour
 
     public void ResetDelivery()
     {
+        Transform resetPoint = GameObject.FindWithTag("ResetObject").GetComponent<Transform>();
+
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 

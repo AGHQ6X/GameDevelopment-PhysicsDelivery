@@ -13,7 +13,13 @@ public class GameManager : MonoBehaviour
     private int currentScore = 0;
     private int currentAttempts;
 
-    public bool isPlaying = true;
+    public bool isPlaying;
+
+    public Transform resetObjectPosition;
+    public Transform resetPointPosition;
+    public Transform resetCameraPosition;
+
+    public GameManager next;
 
     void Start()
     {
@@ -22,6 +28,23 @@ public class GameManager : MonoBehaviour
         UpdateUI();
 
         statusText.text = "";
+
+        if (isPlaying) Activate();
+    }
+
+    public void Activate()
+    {
+        GameObject.FindWithTag("ResetObject").transform.position = resetObjectPosition.position;
+        GameObject.FindWithTag("ResetPoint").transform.position = resetPointPosition.position;
+
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().ResetPlayer();
+        GameObject.FindWithTag("DeliveryObject").GetComponent<DeliveryObject>().ResetDelivery();
+
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        camera.transform.position = resetCameraPosition.position;
+        camera.transform.rotation = resetCameraPosition.rotation;
+
+        UpdateUI();
     }
 
     public void AddScore()
@@ -71,8 +94,18 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
 
-        statusText.text =
-            "YOU WIN!";
+        // No next level
+        if (next == null)
+        {
+            statusText.text =
+                "YOU WIN!";
+        }
+        // Move to next level
+        else
+        {
+            next.isPlaying = true;
+            next.Activate();
+        }
     }
 
     void LoseGame()

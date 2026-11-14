@@ -12,7 +12,7 @@ public class ForceBumper : MonoBehaviour
         {
             rb.AddForce(
                 transform.forward * launchForce,
-                ForceMode.Impulse
+                ForceMode.VelocityChange
             );
         }
     }
