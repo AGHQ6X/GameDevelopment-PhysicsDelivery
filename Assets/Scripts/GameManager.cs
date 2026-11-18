@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text deliveriesText;
     public TMP_Text attemptsText;
     public TMP_Text statusText;
+    public TMP_Text coinsText;
 
     private int currentScore = 0;
     private int currentAttempts;
+    private int currentCoins = 0;
 
     public bool isPlaying;
 
@@ -64,6 +66,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddCoins()
+    {
+        if (!isPlaying)
+            return;
+
+        currentCoins++;
+
+        UpdateUI();
+
+        if (currentScore >= targetScore)
+        {
+            WinGame();
+        }
+    }
+
     public void LoseAttempt()
     {
         if (!isPlaying)
@@ -90,6 +107,10 @@ public class GameManager : MonoBehaviour
         attemptsText.text =
             "Attempts: " +
             currentAttempts;
+
+        coinsText.text =
+            "Coins: " +
+            currentCoins;
     }
 
     void WinGame()
