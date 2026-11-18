@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     {
         currentAttempts = startingAttempts;
 
-        UpdateUI();
-
         statusText.text = "";
 
         if (isPlaying) Activate();
@@ -34,6 +32,10 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
+        isPlaying = true;
+
+        GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = this;
+
         GameObject.FindWithTag("ResetObject").transform.position = resetObjectPosition.position;
         GameObject.FindWithTag("ResetPoint").transform.position = resetPointPosition.position;
 
@@ -99,11 +101,12 @@ public class GameManager : MonoBehaviour
         {
             statusText.text =
                 "YOU WIN!";
+
+            GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = null;
         }
         // Move to next level
         else
         {
-            next.isPlaying = true;
             next.Activate();
         }
     }
