@@ -4,21 +4,20 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public GameManager gameManager;
-    public bool isActive = true;
+    public ActiveManager manager;
 
     private Rigidbody rb;
     private Vector2 moveInput;
 
     void Start()
-
     {
         rb = GetComponent<Rigidbody>();
+        manager = GameObject.FindWithTag("GameController").GetComponent<ActiveManager>();
     }
 
     void Update()
     {
-        if (!isActive)
+        if (manager.active == null)
         {
             moveInput = Vector2.zero;
             return;
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isActive)
+        if (manager.active == null)
             return;
 
         Vector3 movement =
@@ -69,10 +68,13 @@ public class PlayerController : MonoBehaviour
     {
         Transform resetPoint = GameObject.FindWithTag("ResetPoint").GetComponent<Transform>();
 
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
 
-        rb.position = resetPoint.position;
-        rb.rotation = resetPoint.rotation;
+            rb.position = resetPoint.position;
+            rb.rotation = resetPoint.rotation;
+        }
     }
 }

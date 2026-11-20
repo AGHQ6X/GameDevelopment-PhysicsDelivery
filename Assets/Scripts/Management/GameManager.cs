@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text deliveriesText;
     public TMP_Text attemptsText;
     public TMP_Text statusText;
+    public TMP_Text coinsText;
 
-    private int currentScore = 0;
-    private int currentAttempts;
+    protected int currentScore = 0;
+    protected int currentAttempts;
+    protected int currentCoins = 0;
 
     public bool isPlaying;
 
@@ -25,8 +27,6 @@ public class GameManager : MonoBehaviour
     {
         currentAttempts = startingAttempts;
 
-        UpdateUI();
-
         statusText.text = "";
 
         if (isPlaying) Activate();
@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
+        isPlaying = true;
+
+        GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = this;
+
         GameObject.FindWithTag("ResetObject").transform.position = resetObjectPosition.position;
         GameObject.FindWithTag("ResetPoint").transform.position = resetPointPosition.position;
 
@@ -62,6 +66,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public virtual void AddCoins()
+    {
+        if (!isPlaying)
+            return;
+
+        currentCoins++;
+
+        UpdateUI();
+    }
+
     public void LoseAttempt()
     {
         if (!isPlaying)
@@ -77,7 +91,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateUI()
+    protected virtual void UpdateUI()
     {
         deliveriesText.text =
             "Deliveries: " +
@@ -88,6 +102,10 @@ public class GameManager : MonoBehaviour
         attemptsText.text =
             "Attempts: " +
             currentAttempts;
+
+        coinsText.text =
+            "Coins: " +
+            currentCoins;
     }
 
     void WinGame()
@@ -99,11 +117,12 @@ public class GameManager : MonoBehaviour
         {
             statusText.text =
                 "YOU WIN!";
+
+            GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = null;
         }
         // Move to next level
         else
         {
-            next.isPlaying = true;
             next.Activate();
         }
     }
@@ -114,5 +133,7 @@ public class GameManager : MonoBehaviour
 
         statusText.text =
             "GAME OVER";
+
+        GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = null;
     }
 }

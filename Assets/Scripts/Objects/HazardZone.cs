@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoalZone : MonoBehaviour
+public class HazardZone : MonoBehaviour
 {
     public GameManager gameManager;
 
@@ -8,14 +8,13 @@ public class GoalZone : MonoBehaviour
     {
         if (other.CompareTag("DeliveryObject"))
         {
-            Debug.Log("Successful Delivery!");
-
-            gameManager.AddScore();
+            gameManager.LoseAttempt();
 
             DeliveryObject delivery =
                 other.GetComponent<DeliveryObject>();
 
-            if (delivery != null)
+            if (delivery != null &&
+                gameManager.isPlaying)
             {
                 delivery.ResetDelivery();
             }
