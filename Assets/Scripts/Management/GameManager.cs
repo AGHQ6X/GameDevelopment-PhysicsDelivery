@@ -133,5 +133,7 @@ public class GameManager : MonoBehaviour
 
         statusText.text =
             "GAME OVER";
+
+        GameObject.FindWithTag("GameController").GetComponent<ActiveManager>().active = null;
     }
 }
