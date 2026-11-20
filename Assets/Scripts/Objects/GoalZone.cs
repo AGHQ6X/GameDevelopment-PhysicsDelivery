@@ -8,8 +8,6 @@ public class GoalZone : MonoBehaviour
     {
         if (other.CompareTag("DeliveryObject"))
         {
-            Debug.Log("Successful Delivery!");
-
             gameManager.AddScore();
 
             DeliveryObject delivery =

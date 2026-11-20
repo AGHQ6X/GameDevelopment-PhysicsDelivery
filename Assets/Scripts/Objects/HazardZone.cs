@@ -8,8 +8,6 @@ public class HazardZone : MonoBehaviour
     {
         if (other.CompareTag("DeliveryObject"))
         {
-            Debug.Log("Delivery Failed!");
-
             gameManager.LoseAttempt();
 
             DeliveryObject delivery =
