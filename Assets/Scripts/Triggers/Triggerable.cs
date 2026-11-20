@@ -6,9 +6,10 @@ public abstract class Triggerable : MonoBehaviour
 
     public void Trigger()
     {
+        Debug.Log("Triggerable triggered!");
         Activate();
         isTriggered = true;
     }
 
-    protected abstract void Activate();
+    protected virtual void Activate() {}
 }

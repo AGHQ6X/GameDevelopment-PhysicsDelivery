@@ -1181,6 +1181,7 @@ GameObject:
   - component: {fileID: 271881430}
   - component: {fileID: 271881429}
   - component: {fileID: 271881428}
+  - component: {fileID: 271881431}
   m_Layer: 0
   m_Name: EastWall
   m_TagString: Untagged
@@ -1197,8 +1198,8 @@ Transform:
   m_GameObject: {fileID: 271881426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.5, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 30}
+  m_LocalPosition: {x: -5.5, y: 1, z: 10}
+  m_LocalScale: {x: 1, y: 2, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1878756548}
@@ -1281,6 +1282,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271881426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &271881431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271881426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d2b62831698014894fe504ff965505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerSink
+  moveSpeed: 0.5
 --- !u!1 &318507416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,7 +3208,7 @@ Transform:
   m_GameObject: {fileID: 780696314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 0.01, z: 10}
+  m_LocalPosition: {x: -15, y: 0.01, z: 10.5}
   m_LocalScale: {x: 8, y: 0.02, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11068,7 +11082,7 @@ MonoBehaviour:
   resetObjectPosition: {fileID: 772376657}
   resetPointPosition: {fileID: 2080259410}
   resetCameraPosition: {fileID: 1750082239}
-  next: {fileID: 1837681676}
+  next: {fileID: 0}
 --- !u!1 &1784708300
 GameObject:
   m_ObjectHideFlags: 0
@@ -11334,9 +11348,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837681674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38df15e43c4abe4ca1f4dac82f0729f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d37054d74a2c7d1db0c88ed622b7a9c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  m_EditorClassIdentifier: Assembly-CSharp::GameManagerCoin
   targetScore: 1
   startingAttempts: 3
   deliveriesText: {fileID: 1962403784}
@@ -11348,6 +11362,7 @@ MonoBehaviour:
   resetPointPosition: {fileID: 408234199}
   resetCameraPosition: {fileID: 1965524932}
   next: {fileID: 1388744100}
+  trigger: {fileID: 271881431}
 --- !u!1 &1865405479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11568,7 +11583,7 @@ Transform:
   m_GameObject: {fileID: 1895920443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.5, y: 1, z: 3.5}
+  m_LocalPosition: {x: -12.5, y: 1, z: 5}
   m_LocalScale: {x: 15, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

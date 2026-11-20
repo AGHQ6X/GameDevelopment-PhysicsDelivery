@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class TriggerSink : Triggerable
 {
+    public float moveSpeed = 0.5f;
+
     void Update()
     {
-        if (rb.transform.position.y < 5f)
+        if (transform.position.y < -5f)
             gameObject.SetActive(false);
     }
 
@@ -12,12 +14,7 @@ public class TriggerSink : Triggerable
     {
         if (isTriggered)
         {
-            transform.position -= Time.deltaTime;
+            transform.position += Vector3.down * moveSpeed * Time.deltaTime;
         }
-    }
-
-    protected override void Activate()
-    {
-
     }
 }
